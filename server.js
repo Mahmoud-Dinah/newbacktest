@@ -7,6 +7,7 @@ const PORT = process.env.PORT;
 const cors = require('cors');
 const axios = require('axios')
 app.use(express.json());
+app.use(cors());
 const mongoose = require('mongoose');
 const {getHeroApiData} = require ('./controllers/api.data.controller')
 const {creatFavHero , getFaveHero, deleteFavHero, updateFavHero} = require ('./controllers/api.crud.controller')
@@ -26,7 +27,6 @@ app.post('/allhero/fav', creatFavHero)
 app.get('/allhero/fav', getFaveHero)
 app.delete('/allhero/fav/:name', deleteFavHero)
 app.put('/allhero/fav/:name', updateFavHero)
-
 
 
 
